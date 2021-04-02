@@ -5,10 +5,12 @@
   width: 15rem;
   box-shadow: 0px 0px 10px 1px rgba(194, 194, 194, 1);
   text-align: left;
+  transition: ease-out 0.5s;
 }
 .childCard:hover {
   cursor: pointer;
-  transform: scale(1.01);
+  transform: scale(1.05);
+  transition: ease-out 0.3s;
 }
 .text {
   height: 100%;

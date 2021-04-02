@@ -3,11 +3,12 @@ import "./Principal.css";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import SubComponent from "./subComponent";
-
+import { useHistory } from "react-router-dom";
 const Principal = () => {
   const [data, setdata] = useState();
   const [words, setwords] = useState("");
-  const [region, setregion] = useState("");
+  const [region, setregion] = useState("ALL");
+  const history = useHistory();
   async function getData() {
     let { data } = await axios.get("https://restcountries.eu/rest/v2/all");
     setdata(data);
@@ -43,6 +44,7 @@ const Principal = () => {
           <div className="option">
             <p>Select by region:</p>
             <select onChange={(e) => setregion(e.target.value)}>
+              <option value="ALL">ALL</option>
               <option value="Africa">Africa</option>
               <option value="Americas">Americas</option>
               <option value="Asia">Asia</option>
@@ -58,9 +60,12 @@ const Principal = () => {
               .filter((elem) =>
                 elem.name.toUpperCase().includes(words.toUpperCase())
               )
-              .filter((el) => el.region === region)
+              .filter((el) => {
+                if (region === "ALL") return true;
+                return el.region === region;
+              })
               .map((el) => {
-                return <SubComponent el={el} key={el.name} />;
+                return <SubComponent history={history} el={el} key={el.name} />;
               })}
         </div>
       </section>

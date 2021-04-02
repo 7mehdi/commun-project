@@ -1,9 +1,9 @@
 import React from "react";
 import "./subComponent.css";
 
-const subComponent = ({ el }) => {
+const subComponent = ({ el, history }) => {
   return (
-    <div className="childCard">
+    <div className="childCard" onClick={() => history.push(`/${el.name}`)}>
       <img className="flag" src={`${el.flag}`} alt="" />
 
       <div className="text">

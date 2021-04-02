@@ -1,13 +1,16 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { useParams } from "react-router-dom";
 import "./Detaile.css";
+import { useHistory } from "react-router-dom";
 const Detaile = () => {
   const [data, setdata] = useState();
   const [theme, setTheme] = useState("white");
-
+  const { name } = useParams();
+  const history = useHistory();
   const getData = async () => {
     const { data } = await axios
-      .get(` https://restcountries.eu/rest/v2/name/algeria`)
+      .get(` https://restcountries.eu/rest/v2/name/${name}`)
       .catch((err) => console.log("Error", err));
     console.log(data);
     setdata(data);
@@ -24,7 +27,7 @@ const Detaile = () => {
           style={{ paddingLeft: "10px", marginBottom: "50px " }}
           className="btn"
         >
-          <button>
+          <button onClick={() => history.goBack()}>
             <i
               style={{ paddingRight: "15px" }}
               className="fas fa-arrow-left"

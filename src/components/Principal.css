@@ -55,3 +55,11 @@ form {
   width: 90%;
   justify-content: space-between;
 }
+.fas {
+  opacity: 0.3;
+}
+.fas:hover {
+  opacity: 1;
+  transform: scale(1.2);
+  cursor: pointer;
+}
