@@ -7,7 +7,7 @@ import SubComponent from "./subComponent";
 const Principal = () => {
   const [data, setdata] = useState();
   const [words, setwords] = useState("");
-  const [region, setregion] = useState();
+  const [region, setregion] = useState("");
   async function getData() {
     let { data } = await axios.get("https://restcountries.eu/rest/v2/all");
     setdata(data);
@@ -17,13 +17,6 @@ const Principal = () => {
   }, []);
   return (
     <div>
-      <nav className="nav-bar">
-        <h1 className="logo">Where in the world?</h1>
-        <div className="darkMode">
-          <i className="far fa-moon"></i>
-          <p>dark mode</p>
-        </div>
-      </nav>
       <section>
         <div className="inputAndOption">
           <form
