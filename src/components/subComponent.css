@@ -1,0 +1,28 @@
+.childCard {
+  margin: 3rem;
+  border-radius: 3px;
+  overflow: hidden;
+  width: 15rem;
+  box-shadow: 0px 0px 10px 1px rgba(194, 194, 194, 1);
+  text-align: left;
+}
+.childCard:hover {
+  cursor: pointer;
+  transform: scale(1.01);
+}
+.text {
+  height: 100%;
+  width: 100%;
+  padding: 0 2rem 1rem 2rem;
+  box-sizing: border-box;
+}
+.option {
+  display: flex;
+  align-items: center;
+}
+select {
+  box-sizing: border-box;
+  width: 5rem;
+  height: 2rem;
+  margin-left: 1rem;
+}
