@@ -10,9 +10,15 @@ const Principal = () => {
   const [region, setregion] = useState("ALL");
   const history = useHistory();
   async function getData() {
-    let { data } = await axios.get("https://restcountries.eu/rest/v2/all");
-    setdata(data);
+    let data = await axios.get("https://restcountries.com/v3.1/all");
+    
+    const finalData=data.data
+    setdata(finalData)
+    console.log(finalData)
+   
   }
+  
+ 
   useEffect(() => {
     getData();
   }, []);
@@ -54,18 +60,17 @@ const Principal = () => {
           </div>
         </div>
         <div className="card">
-          {region &&
+          {region&&
             data &&
-            data
-              .filter((elem) =>
-                elem.name.toUpperCase().includes(words.toUpperCase())
-              )
-              .filter((el) => {
-                if (region === "ALL") return true;
-                return el.region === region;
-              })
-              .map((el) => {
+            data.filter((elem) =>
+            elem.name.common.toUpperCase().includes(words.toUpperCase())
+          )
+          .filter((el) => {
+            if (region === "ALL") return true;
+            return el.region === region;
+          }).map((el) => {
                 return <SubComponent history={history} el={el} key={el.name} />;
+                
               })}
         </div>
       </section>

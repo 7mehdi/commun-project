@@ -3,14 +3,17 @@ import "./subComponent.css";
 
 const subComponent = ({ el, history }) => {
   return (
-    <div className="childCard" onClick={() => history.push(`/${el.name}`)}>
-      <img className="flag" src={`${el.flag}`} alt="" />
+    <div
+      className="childCard"
+      onClick={() => history.push(`/${el.name.common}`)}
+    >
+      <img className="flag" src={`${el.flags.png}`} alt="" />
 
       <div className="text">
-        <h3>{el.name}</h3>
+        <h3>{el.name.common}</h3>
         <p>
           <span>Population: </span>
-          {el.population}
+          {el.population} 🧍
         </p>
         <p>
           {" "}
@@ -20,7 +23,7 @@ const subComponent = ({ el, history }) => {
         <p>
           {" "}
           <span>Capital: </span>
-          {el.capital}
+          {console.log(el.capital)}
         </p>
       </div>
     </div>
