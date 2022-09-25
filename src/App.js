@@ -12,7 +12,7 @@ function App() {
           <h1 className="logo">Where in the world?</h1>
           <div className="darkMode">
             <i className="far fa-moon"></i>
-            <p>dark mode</p>
+            <p>Dark mode</p>
           </div>
         </nav>
         <Switch>

@@ -27,7 +27,8 @@ const Detaile = () => {
           style={{ paddingLeft: "10px", marginBottom: "50px " }}
           className="btn"
         >
-          <button onClick={() => history.goBack()}>
+          <button className="back-btn" onClick={() => {history.goBack()
+          }}>
             <i
               style={{ paddingRight: "15px" }}
               className="fas fa-arrow-left"
