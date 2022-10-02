@@ -4,8 +4,9 @@
   width: 80vw;
   margin: 0 auto;
   flex-direction: row;
+  flex-wrap: wrap;
   align-items: center;
-  justify-content: start;
+  justify-content: space-around;
   text-align: left;
 }
 body {
@@ -33,7 +34,6 @@ body {
   flex-direction: column;
   align-items: top;
   flex-wrap: wrap;
-  margin-left: 20rem;
   font-size: 15px;
 }
 .dark .information {
@@ -70,7 +70,6 @@ body {
 
 .border {
   margin-top: -45%;
-  margin-right: 1%;
   display: flex;
   align-items: center;
   list-style: none;

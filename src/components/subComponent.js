@@ -1,11 +1,16 @@
 import React from "react";
 import "./subComponent.css";
-
+import {motion} from 'framer-motion/dist/framer-motion'
 const subComponent = ({ el, history }) => {
   return (
-    <div
+    <motion.div
       className="childCard"
       onClick={() => history.push(`/${el.name.common}`)}
+      initial={{y:'100%', opacity:'0'}}
+      animate={{y:'0%' ,opacity:'1',transition :{duration: 0.05}}}
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.8 }}
+
     >
       <img className="flag" src={`${el.flags.png}`} alt="" />
 
@@ -26,7 +31,7 @@ const subComponent = ({ el, history }) => {
           {console.log(el.capital)}
         </p>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

@@ -3,12 +3,13 @@ import "./Principal.css";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import SubComponent from "./subComponent";
-import { useHistory } from "react-router-dom";
+import { useHistory, useLocation } from "react-router-dom";
 const Principal = () => {
   const [data, setdata] = useState();
   const [words, setwords] = useState("");
   const [region, setregion] = useState("ALL");
   const history = useHistory();
+  const location = useLocation();
   async function getData() {
     let data = await axios.get("https://restcountries.com/v3.1/all");
     
@@ -23,7 +24,7 @@ const Principal = () => {
     getData();
   }, []);
   return (
-    <div>
+    <div location={location}>
       <section>
         <div className="inputAndOption">
           <form

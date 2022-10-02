@@ -1,11 +1,13 @@
 import Principal from "./Components/Principal.js";
 import Detaile from "./Components/Detaile.js";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import "./App.css";
 
 function App() {
+  
+
   return (
-    <Router>
+    <Router >
       {" "}
       <div className="App">
         <nav className="nav-bar">
