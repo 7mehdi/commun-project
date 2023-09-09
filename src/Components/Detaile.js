@@ -8,16 +8,18 @@ const Detaile = () => {
   const [theme, setTheme] = useState("white");
   const name = useParams();
   const history = useHistory();
+  console.log(name)
   const getData = async () => {
     const { data } = await axios
-      .get(` https://restcountries.com/v3.1/name/${name.name}`)
-      .catch((err) => console.log("Error", err));
+      .get(` https://restcountries.com/v3.1/alpha?codes=${name.name}`)
+      .catch((err) => {<p>No </p>});
     let finalData = data[0];
     setdata(finalData);
   };
   console.log(data);
   useEffect(() => {
-    getData();
+  getData();
+    
   }, []);
 
   return (
@@ -48,7 +50,7 @@ const Detaile = () => {
             )}
           </div>
 
-          {data && (
+          {data ?(
             <div className="information ">
               <h3> {`${data.name.official}`} </h3>
               <div className="info">
@@ -99,7 +101,9 @@ const Detaile = () => {
                 </li></ul>
               </div>
             </div>
-          )}
+          ):<p>
+            No Data
+            </p>}
         </div>
       </body>
     </div>

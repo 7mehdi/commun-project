@@ -70,7 +70,7 @@ const Principal = () => {
             if (region === "ALL") return true;
             return el.region === region;
           }).map((el) => {
-                return <SubComponent history={history} el={el} key={el.name} />;
+                return <SubComponent history={history} el={el} key={el.id} />;
                 
               })}
         </div>

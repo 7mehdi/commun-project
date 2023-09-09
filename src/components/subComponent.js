@@ -1,11 +1,11 @@
-import React from "react";
+import React ,{useEffect}from "react";
 import "./subComponent.css";
 import {motion} from 'framer-motion/dist/framer-motion'
 const subComponent = ({ el, history }) => {
   return (
     <motion.div
       className="childCard"
-      onClick={() => history.push(`/${el.name.common}`)}
+      onClick={() => history.push(`/${el.ccn3}`)}
       initial={{y:'100%', opacity:'0'}}
       animate={{y:'0%' ,opacity:'1',transition :{duration: 0.05}}}
       whileHover={{ scale: 1.05 }}
@@ -28,7 +28,7 @@ const subComponent = ({ el, history }) => {
         <p>
           {" "}
           <span>Capital: </span>
-          {console.log(el.capital)}
+          {el.capital}
         </p>
       </div>
     </motion.div>
